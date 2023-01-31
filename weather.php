@@ -9,8 +9,9 @@
             padding: 25px;
             display: flex;
             width: 12em;
+            height: fit-content;
+            align-self: center;
             justify-content: center;
-            align-items: center;
             background-color:linen;
         }
     </style>
