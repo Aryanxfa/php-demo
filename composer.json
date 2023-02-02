@@ -1,0 +1,17 @@
+{
+    "name": "sarv/php-demo",
+    "autoload": {
+        "psr-4": {
+            "Sarv\\PhpDemo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aryanxfa",
+            "email": "aryan200152@gmail.com"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.15"
+    }
+}
