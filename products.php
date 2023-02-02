@@ -23,23 +23,21 @@
     style="background-attachment:fixed">
 
     <div>
-        <?php
-        echo "<h1 style=text-align:center>Products from mongodb</h1>";
-        echo "<br>";
-        ?>
+        <h1 style=text-align:center>Products from mongodb</h1>
+        <h2><a href='index.php'>&lt;&lt;Home</a></h2>
 
         <div style=display:flex;flex-wrap:wrap;flex-direction:row;margin:10px>
 
             <?php
             $manager = new MongoDB\Driver\Manager(
                 'mongodb+srv://twinkle:1234@cluster0.jqk7zdi.mongodb.net/?retryWrites=true&w=majority'
-            );            
+            );
 
             $filter = array();
             $options = array('limit' => 100);
             $query = new MongoDB\Driver\Query($filter, $options);
             $products = $manager->executeQuery('test.products', $query);
-            
+
             foreach ($products->toArray() as $document) {
                 echo '<div class=item>';
 
@@ -49,6 +47,8 @@
                 echo "</div>";
             }
             ?>
+
+            <div class=item style="font-size:xxx-large;width:fit-content">+</div>
         </div>
     </div>
 </body>

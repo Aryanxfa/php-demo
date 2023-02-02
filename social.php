@@ -12,17 +12,15 @@
             height: fit-content;
             align-self: center;
             justify-content: center;
-            background-color:linen;
+            background-color: linen;
         }
     </style>
     <title>hello PHP</title>
 </head>
 
 <body>
-    <?php
-    echo "<h1 style=text-align:center>Social Network</h1>";
-    echo "<br>";
-    ?>
+    <h1 style=text-align:center>Products from mongodb</h1>
+    <h2><a href='index.php'>&lt;&lt;Home</a></h2>
 
     <div style=display:flex;flex-wrap:wrap;flex-direction:row;margin:10px>
 
@@ -34,7 +32,7 @@
         foreach ($decoded as $eachpost) {
             echo '<div class=item>';
             foreach ($eachpost as $key => $value) {
-                echo $key . " : " . substr($value,rand(0,10),rand(0,1000)) . "<br>";
+                echo $key . " : " . substr($value, rand(0, 10), rand(0, 1000)) . "<br>";
             }
             echo "</div>";
         }
