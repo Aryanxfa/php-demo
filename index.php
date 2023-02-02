@@ -5,7 +5,15 @@
 </head>
 
 <body>
-    <?php echo '<p>Hello World</p>'; ?>
+    <?php echo '<h1>Hello World, I am using PHP.</h1>'; ?>
+    <ul>
+        <li>
+            <h2><a href="social.php">Social page with JSON data</a></h2>
+        </li>
+        <li>
+            <h2><a href="products.php">Product page with MongoDB Atlas data</a></h2>
+        </li>
+    </ul>
 </body>
 
 </html>
