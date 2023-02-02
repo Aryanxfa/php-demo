@@ -15,11 +15,11 @@
             background-color: linen;
         }
     </style>
-    <title>hello PHP</title>
+    <title>Social Page</title>
 </head>
 
 <body>
-    <h1 style=text-align:center>Products from mongodb</h1>
+    <h1 style=text-align:center>Parsing data from JSON</h1>
     <h2><a href='index.php'>&lt;&lt;Home</a></h2>
 
     <div style=display:flex;flex-wrap:wrap;flex-direction:row;margin:10px>

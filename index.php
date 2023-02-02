@@ -13,6 +13,9 @@
         <li>
             <h2><a href="products.php">Product page with MongoDB Atlas data</a></h2>
         </li>
+        <li>
+            <h2><a href="parse_csv.php">Parse CSV file and upload to mongodb</a></h2>
+        </li>
     </ul>
 </body>
 

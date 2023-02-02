@@ -15,15 +15,15 @@
             background-color: white;
         }
     </style>
-    <title>Product page</title>
+    <title>Buy now</title>
 </head>
 
 <body
-    background='https://www.hdwallpapers.in/download/dark_light_yellow_lines_background_material_design_hd_abstract-1920x1080.jpg'
+    background='https://www.hdwallpapers.in/download/sunset_scenery-1920x1080.jpg'
     style="background-attachment:fixed">
 
     <div>
-        <h1 style=text-align:center>Parsing data from mongodb</h1>
+        <h1 style=text-align:center;font-color:white>Parse CSV file</h1>
         <h2><a href='index.php'>&lt;&lt;Home</a></h2>
 
         <div style=display:flex;flex-wrap:wrap;flex-direction:row;margin:10px>
@@ -33,20 +33,22 @@
                 'mongodb+srv://twinkle:1234@cluster0.jqk7zdi.mongodb.net/?retryWrites=true&w=majority'
             );
 
-            $filter = array();
-            $options = array('limit' => 100);
-            $query = new MongoDB\Driver\Query($filter, $options);
-            $products = $manager->executeQuery('test.products', $query);
+            // $filter = array();
+            // $options = array('limit' => 100);
+            // $query = new MongoDB\Driver\Query($filter, $options);
+            // $products = $manager->executeQuery('test.products', $query);
 
-            foreach ($products->toArray() as $document) {
-                echo '<div class=item>';
+            // foreach ($products->toArray() as $document) {
+            //     echo '<div class=item>';
 
-                foreach ($document as $key => $value) {
-                    echo $key . " : " . $value . "<br>";
-                }
-                echo "</div>";
-            }
+            //     foreach ($document as $key => $value) {
+            //         echo $key . " : " . $value . "<br>";
+            //     }
+            //     echo "</div>";
+            // }
             ?>
+
+            <div class=item style="font-size:xxx-large;width:fit-content">+</div>
         </div>
     </div>
 </body>
