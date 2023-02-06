@@ -5,13 +5,14 @@
         #parent * {
             margin: 5px 0;
         }
+
         .item {
             border: 2px solid red;
             border-radius: 30px;
             margin: 2px;
             padding: 25px;
             display: flex;
-            width: 12em;
+            width: fit-content;
             height: fit-content;
             align-self: center;
             justify-content: center;
@@ -29,12 +30,15 @@
         <h1 style=text-align:center>Parsing data from mongodb</h1>
         <h2><a href='index.php'>&lt;&lt;Home</a></h2>
         <div class="item" id="parent">
-            <form action="add_mongo.php" method="post">
+            <form action="mongo_internal.php" method="post">
                 <label for="email"><b>Add New Entry</b></label>
                 <input type="text" placeholder="Enter Email" name="email">
                 <input type="text" placeholder="Enter UserID" name="userid">
                 <input type="password" placeholder="Enter Password" name="psw">
-                <button type="submit" class="btn">Add Entry</button>
+                <button type="submit" name="add" class="btn">Add Entry</button>
+                <div style="border-left: 3px solid #bbb;height: 20px;"></div>
+                <button type="submit" name="importcsv">Import CSV</button>
+                <button type="submit" name="wipedb" style="color:red">Wipe Data</button>
             </form>
         </div>
 
