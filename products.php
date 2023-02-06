@@ -2,6 +2,9 @@
 
 <head>
     <style>
+        #parent * {
+            margin: 5px 0;
+        }
         .item {
             border: 2px solid red;
             border-radius: 30px;
@@ -25,6 +28,15 @@
     <div>
         <h1 style=text-align:center>Parsing data from mongodb</h1>
         <h2><a href='index.php'>&lt;&lt;Home</a></h2>
+        <div class="item" id="parent">
+            <form action="add_mongo.php" method="post">
+                <label for="email"><b>Add New Entry</b></label>
+                <input type="text" placeholder="Enter Email" name="email">
+                <input type="text" placeholder="Enter UserID" name="userid">
+                <input type="password" placeholder="Enter Password" name="psw">
+                <button type="submit" class="btn">Add Entry</button>
+            </form>
+        </div>
 
         <div style=display:flex;flex-wrap:wrap;flex-direction:row;margin:10px>
 
