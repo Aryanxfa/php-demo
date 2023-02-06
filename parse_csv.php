@@ -8,47 +8,54 @@
             margin: 2px;
             padding: 25px;
             display: flex;
-            width: 12em;
+            width: fit-content;
             height: fit-content;
             align-self: center;
             justify-content: center;
             background-color: white;
         }
     </style>
-    <title>Buy now</title>
+    <title>CSV Viewer</title>
 </head>
 
 <body
-    background='https://www.hdwallpapers.in/download/sunset_scenery-1920x1080.jpg'
+    background='https://4kwallpapers.com/images/wallpapers/macos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-1920x1080-1455.jpg'
     style="background-attachment:fixed">
 
     <div>
-        <h1 style=text-align:center;font-color:white>Parse CSV file</h1>
+        <h1 style=text-align:center>Parsing data from CSV</h1>
         <h2><a href='index.php'>&lt;&lt;Home</a></h2>
+        <form action="parse_csv.php" method="post" enctype="multipart/form-data">
+            Select CSV to upload:
+            <input type="hidden" name="MAX_FILE_SIZE" value="1000000000" />
+            <input type="file" name="fileToUpload" id="fileToUpload" />
+            <input type="submit" value="Upload CSV" name="submit" />
+        </form>
 
+        <?php
+        if (isset($_POST['submit'])) {
+            echo "Current File: " . $_FILES['fileToUpload']['name'];
+            echo "<br>";
+        }
+        ?>
         <div style=display:flex;flex-wrap:wrap;flex-direction:row;margin:10px>
 
             <?php
-            $manager = new MongoDB\Driver\Manager(
-                'mongodb+srv://twinkle:1234@cluster0.jqk7zdi.mongodb.net/?retryWrites=true&w=majority'
-            );
+            if (isset($_POST['submit'])) {
+                $tmpName = $_FILES['fileToUpload']['tmp_name'];
+                $csvAsArray = array_map('str_getcsv', file($tmpName));
+                $header = array_shift($csvAsArray);
 
-            // $filter = array();
-            // $options = array('limit' => 100);
-            // $query = new MongoDB\Driver\Query($filter, $options);
-            // $products = $manager->executeQuery('test.products', $query);
-
-            // foreach ($products->toArray() as $document) {
-            //     echo '<div class=item>';
-
-            //     foreach ($document as $key => $value) {
-            //         echo $key . " : " . $value . "<br>";
-            //     }
-            //     echo "</div>";
-            // }
+                foreach ($csvAsArray as $document) {
+                    echo '<div class=item>';
+                    foreach ($document as $key => $value) {
+                        echo $header[$key] . " : " . $value . "<br>";
+                    }
+                    echo "</div>";
+                }
+            }
             ?>
 
-            <div class=item style="font-size:xxx-large;width:fit-content">+</div>
         </div>
     </div>
 </body>
