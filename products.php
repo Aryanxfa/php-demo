@@ -40,6 +40,13 @@
                 <button type="submit" name="importcsv">Import CSV</button>
                 <button type="submit" name="wipedb" style="color:red">Wipe Data</button>
             </form>
+            </div>
+            <div class="item" id="parent">
+                <form action="mongo_internal.php" method="post" enctype="multipart/form-data">
+                    <h4>Delete Operations:</h4>
+                    <button type="submit" name="wipedb" style="color:red">Wipe All Data</button>
+                </form>
+            </div>
         </div>
 
         <div style=display:flex;flex-wrap:wrap;flex-direction:row;margin:10px>
