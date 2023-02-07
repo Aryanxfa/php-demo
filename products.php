@@ -57,7 +57,7 @@
                 </form>
             </div>
         </div>
-
+        <hr style="border:1px solid grey;margin-left:1%;margin-right:1%">
         <div style=display:flex;flex-wrap:wrap;flex-direction:row;margin:10px>
 
             <?php
