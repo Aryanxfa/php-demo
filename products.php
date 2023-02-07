@@ -37,7 +37,7 @@
                     <h4>Add New Entry</h4>
                     <input type="text" placeholder="Enter Email" name="email">
                     <input type="text" placeholder="Enter UserID" name="userid">
-                    <input type="password" placeholder="Enter Password" name="psw">
+                    <input type="password" placeholder="Enter Password" name="password">
                     <button type="submit" name="add" class="btn">Add Entry</button>
                 </form>
             </div>
