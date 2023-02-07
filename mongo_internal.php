@@ -1,4 +1,10 @@
 <?php
+
+$manager = new MongoDB\Driver\Manager(
+    'mongodb+srv://twinkle:1234@cluster0.jqk7zdi.mongodb.net/?retryWrites=true&w=majority'
+);
+$bulk = new MongoDB\Driver\BulkWrite;
+
 if (isset($_POST['add'])) {
     echo "Adding Entry to Database";
 }
