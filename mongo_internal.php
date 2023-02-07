@@ -7,7 +7,15 @@ $bulk = new MongoDB\Driver\BulkWrite;
 
 if (isset($_POST['add'])) {
     echo "Adding Entry to Database";
+    $document = array_slice($_POST, 0, -1, true);
+    $_id1 = $bulk->insert($document);
+    $result = $manager->executeBulkWrite('db.collection', $bulk);
+    echo '<pre> Reply from Server';
+    var_dump($result);
+    echo '</pre>';
+    echo "=> Added to Databse Successfully";
 }
+
 if (isset($_POST['importcsv'])) {
     echo "Current File: " . $_FILES['fileToUpload']['name'];
     echo "Importing CSV to Database";
