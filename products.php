@@ -29,17 +29,25 @@
     <div>
         <h1 style=text-align:center>Parsing data from mongodb</h1>
         <h2><a href='index.php'>&lt;&lt;Home</a></h2>
-        <div class="item" id="parent">
-            <form action="mongo_internal.php" method="post">
-                <label for="email"><b>Add New Entry</b></label>
-                <input type="text" placeholder="Enter Email" name="email">
-                <input type="text" placeholder="Enter UserID" name="userid">
-                <input type="password" placeholder="Enter Password" name="psw">
-                <button type="submit" name="add" class="btn">Add Entry</button>
-                <div style="border-left: 3px solid #bbb;height: 20px;"></div>
-                <button type="submit" name="importcsv">Import CSV</button>
-                <button type="submit" name="wipedb" style="color:red">Wipe Data</button>
-            </form>
+
+        <div style=display:flex;flex-wrap:wrap;flex-direction:row;margin:10px>
+            <div class="item" id="parent">
+                <form action="mongo_internal.php" method="post">
+                    <h4>Add New Entry</h4>
+                    <input type="text" placeholder="Enter Email" name="email">
+                    <input type="text" placeholder="Enter UserID" name="userid">
+                    <input type="password" placeholder="Enter Password" name="psw">
+                    <button type="submit" name="add" class="btn">Add Entry</button>
+                </form>
+            </div>
+            <div class="item" id="parent">
+                <form action="mongo_internal.php" method="post" enctype="multipart/form-data">
+                    <h4>CSV Operations:</h4>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000000" />
+                    <input type="file" name="fileToUpload" id="fileToUpload" />
+                    <button type="submit" name="importcsv">Import CSV</button>
+                    <button type="submit" name="exportcsv">Export CSV</button>
+                </form>
             </div>
             <div class="item" id="parent">
                 <form action="mongo_internal.php" method="post" enctype="multipart/form-data">
