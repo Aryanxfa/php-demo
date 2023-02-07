@@ -4,6 +4,7 @@
     <style>
         #parent * {
             margin: 5px 0;
+            width: 250px;
         }
 
         .item {
