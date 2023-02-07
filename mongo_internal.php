@@ -9,7 +9,7 @@ if (isset($_POST['add'])) {
     echo "Adding Entry to Database";
     $document = array_slice($_POST, 0, -1, true);
     $_id1 = $bulk->insert($document);
-    $result = $manager->executeBulkWrite('db.collection', $bulk);
+    $result = $manager->executeBulkWrite('test.products', $bulk);
     echo '<pre> Reply from Server';
     var_dump($result);
     echo '</pre>';
